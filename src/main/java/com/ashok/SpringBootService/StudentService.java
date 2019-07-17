@@ -50,4 +50,29 @@ public class StudentService {
 		}
 		return null;
 	}
+	public List<Course> getAllStudentCourses(String studentId)
+	{
+		Student student=getSingleStudentInfo(studentId);
+		if(student==null)
+		{
+			return null;
+		}
+		return student.getCourses();
+	}
+	public List<String> getAllStepsInfo(String student_id,String course_id)
+	{
+		Student student=getSingleStudentInfo(student_id);
+		if(student==null)
+		{
+			return null;
+		}
+		for(Course course:student.getCourses())
+		{
+			if(course.getId().equals(course_id))
+			{
+				return course.getSteps();
+			}
+		}
+		return null;
+	}
 }
