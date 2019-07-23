@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ashok.SpringBootModel.Course;
 import com.ashok.SpringBootModel.Student;
 import com.ashok.SpringBootService.StudentService;
 
@@ -29,5 +30,19 @@ public class StudentController
 	public Student getSingleStudent(@PathVariable String Student_Id)
 	{
 		return student_service.getSingleStudentInfo(Student_Id);
+	}
+	
+	//get All course information with particular Student_id
+	@GetMapping("/get/all/courses/{student_id}")
+	public List<Course> getAllCourses(@PathVariable String student_id)
+	{
+		return student_service.getAllStudentCourse(student_id);
+	}
+	
+	//get Course infromation accourding to Course_id
+	@GetMapping("/get/course/info/{student_id}/{course_id}")	
+	public Course getStudentCourse(@PathVariable String student_id,@PathVariable String course_id)
+	{
+		return student_service.getSingleStudentCourse(student_id, course_id);
 	}
 }

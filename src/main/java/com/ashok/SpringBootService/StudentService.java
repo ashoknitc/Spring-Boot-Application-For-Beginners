@@ -51,4 +51,30 @@ public class StudentService {
 		}
 		return null;
 	}
+	
+	//Method to Get Student-Course Information
+	public List<Course> getAllStudentCourse(String Student_id)
+	{
+		for(Student student:students)
+		{
+			if(student.getId().equals(Student_id))
+			{
+				return student.getCourses();
+			}
+		}
+		return null;
+	}
+	
+	//get Single Student Course Information
+	public Course getSingleStudentCourse(String student_id,String course_id)
+	{
+		for(Course course:getAllStudentCourse(student_id))
+		{
+			if(course.getId().equals(course_id))
+			{
+				return course;
+			}
+		}
+		return null;
+	}
 }
