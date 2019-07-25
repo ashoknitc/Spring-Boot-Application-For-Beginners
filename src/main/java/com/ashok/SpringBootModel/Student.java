@@ -15,9 +15,6 @@ public class Student {
 		this.description = description;
 		this.courses = courses;
 	}
-	public Student() {
-		
-	}
 	public String getId() {
 		return id;
 	}
