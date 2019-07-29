@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,7 +47,6 @@ public class StudentController
 	public Course getCourseInfo(@PathVariable String student_id,@PathVariable String course_id)
 	{
 		return student_service.getSingleCourse(student_id, course_id);
-	}
+	}	
 	
-
 }
